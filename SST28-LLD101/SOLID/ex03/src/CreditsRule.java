@@ -1,0 +1,5 @@
+public class CreditsRule implements EligibilityRule {
+    public String check(StudentProfile s) {
+        return s.earnedCredits < 20 ? "credits below 20" : null;
+    }
+}
