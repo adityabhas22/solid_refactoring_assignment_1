@@ -2,7 +2,7 @@ public class WhatsAppSender extends NotificationSender {
     public WhatsAppSender(AuditLog audit) { super(audit); }
 
     @Override
-    public SendResult send(Notification n) {
+    protected SendResult doSend(Notification n) {
         if (n.phone == null || !n.phone.startsWith("+")) {
             audit.add("WA failed");
             return new SendResult(false, "phone must start with + and country code");

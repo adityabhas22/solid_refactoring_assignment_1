@@ -27,6 +27,7 @@ public class OnboardingService {
         String id = IdUtil.nextStudentId(db.count());
         StudentRecord rec = new StudentRecord(id, name, email, phone, program);
 
+        //Unified persistence. 
         db.save(rec);
 
         OnboardingPrinter.printSuccess(id, db.count(), rec);
