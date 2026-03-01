@@ -1,13 +1,13 @@
 import java.util.*;
 
 public class RoomPricing {
-    private final Map<Integer, Double> prices = new HashMap<>();
+    private final Map<Integer, Money> prices = new HashMap<>();
 
-    public void register(int roomType, double price) {
+    public void register(int roomType, Money price) {
         prices.put(roomType, price);
     }
 
-    public double basePrice(int roomType) {
-        return prices.getOrDefault(roomType, 16000.0);
+    public Money basePrice(int roomType) {
+        return prices.getOrDefault(roomType, new Money(16000.0));
     }
 }
