@@ -4,6 +4,9 @@ public class ExportResult {
     public final String error;
 
     public ExportResult(String contentType, byte[] bytes) {
+        if (contentType == null) {
+            throw new IllegalArgumentException("content type must not be null");
+        }
         this.contentType = contentType;
         this.bytes = bytes;
         this.error = null;
